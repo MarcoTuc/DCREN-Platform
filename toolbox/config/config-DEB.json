@@ -1,0 +1,31 @@
+{
+    "name": "DEB",
+    "display-name": "Bayesian",
+    "description": "Bayesian Networks based variable selection algorithm",
+    "authors": "Debora Slanzi @ ECLT",
+    "contacts": "",
+    "module_version": "1.0",
+    "module_path": "toolbox/modules/DEB/DEB_Preprocessing.R", 
+    "trained_version": "?",
+    "default_functionality": "preprocessing",
+    "functionalities": [
+        {
+            "name": "preprocessing",
+            "functionality_type": "summarizer",
+            "description": "apply a log transform to non-gaussian variables",
+            "functionality_version": "1.0",
+            "output_type": "",
+            "preprocessor_path": "toolbox/modules/DEB/DEB_pre.py",
+            "module_path": "toolbox/modules/DEB/DEB_Preprocessing.R", 
+            "postprocessor_path": "",
+            "preprocessing": "python {preprocessor_path}",
+            "command_line": "Rscript {module_path}",
+            "postprocessing": "",
+            "standard_preprocessing_path": "toolbox/modules/DEB/preprocess/preprocess.csv",
+            "standard_input_path": "toolbox/modules/DEB/preprocess/in_data_transformed.csv",
+            "standard_output_path": "toolbox/modules/DEB/input_data",
+            "standard_postprocessing_path": "toolbox/modules/DEB/postprocessed/post_output.csv",
+            "parameters": {}
+        }
+    ]
+}

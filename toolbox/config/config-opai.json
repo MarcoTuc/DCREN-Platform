@@ -1,0 +1,54 @@
+{
+    "name": "opai",
+    "display-name": "OPAi",
+    "description": "",
+    "authors": "Arno Lukas @ Emergentec",
+    "contacts": "arno.lukas@emergentec.com",
+    "module_version": "1.0",
+    "module_path": "toolbox/modules/opai/opaiapp.R", 
+    "trained_version": "1.0",
+    "default_functionality": "predict",
+    "functionalities": [
+        {
+            "name": "predict",
+            "functionality_type": "predictor",
+            "description": "produces the prediction output csv",
+            "functionality_version": "1.0", 
+            "preprocessor_path": "toolbox/modules/opai/pre_opai.py",
+            "module_path": "toolbox/modules/opai/opaiapp.R",
+            "postprocessor_path": "toolbox/modules/opai/post_opai.py",
+            "preprocessing": "python {preprocessor_path}",
+            "command_line": "Rscript {module_path} -m {m} -i {standard_input_path}/{input_name} -o {standard_output_path}/{output_name}",
+            "postprocessing": "python {postprocessor_path}",
+            "standard_preprocessing_path": "toolbox/modules/opai/preprocess/preprocess.csv",
+            "standard_input_path": "toolbox/modules/opai/input_files",
+            "standard_output_path": "toolbox/modules/opai/output_files",
+            "standard_postprocessing_path": "toolbox/modules/opai/postprocessed/post.csv",
+            "parameters": {
+                "required": [],
+                "show": [],
+                "properties": {
+                    "m": {
+                        "type": "string",
+                        "default": "max",
+                        "title": "State matching method",
+                        "choice": ["min", "max", "mean"]
+                    },
+                    "input_name": {
+                        "type": "string",
+                        "default": "temp",
+                        "title": "dataset name",
+                        "pattern": "[A-Za-z0-9_-]+"
+                    },
+                    "output_name": {
+                        "type": "string",
+                        "default": "temp",
+                        "title": "experiment name",
+                        "pattern": "[A-Za-z0-9_-]+"
+                    }
+                }
+            },
+            "outputs": ["TC"]
+        }
+    ]
+}

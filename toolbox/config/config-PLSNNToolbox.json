@@ -1,0 +1,61 @@
+{
+    "name": "PLSNNToolbox",
+    "TODO": [
+        "create two distinct entries for prediction and training"
+    ],
+    "display-name": "PLSNN",
+    "description": "Radial Basis Function Network Method",
+    "authors": "Roger D. Jones",
+    "contacts": "",
+    "module_version": "1.0",
+    "general_path": "toolbox/modules/PLSNNToolbox", 
+    "default_functionality": "predict",
+    "functionalities": [
+        {
+            "name": "predict",
+            "functionality_type": "predictor",
+            "description": "prediction on inputs",
+            "functionality_version": "1.0",
+            "output_type": "regression",
+            "preprocessor_path": "toolbox/modules/PLSNNToolbox/PLSNNToolbox_pre.py",
+            "module_path": "toolbox/modules/PLSNNToolbox/PLSNNToolbox_run.py",
+            "postprocessor_path": "toolbox/modules/PLSNNToolbox/PLSNNToolbox_post.py",
+            "preprocessing": "python {preprocessor_path}",
+            "command_line": "python {module_path} --treatment {treatment} --trainFlag {trainFlag} --xNameDataSet {xNameDataSet} --printFlag {printFlag}",
+            "postprocessing": "python {postprocessor_path}",
+            "standard_preprocessing_path": "toolbox/modules/PLSNNToolbox/data/1_topreprocess/origin.csv",
+            "standard_input_path": "toolbox/modules/PLSNNToolbox/data",
+            "standard_output_path": "toolbox/modules/PLSNNToolbox/PredictionOutput",
+            "standard_postprocessing_path": "toolbox/modules/PLSNNToolbox/data/3_postprocessed/post.csv",
+            "parameters": {
+                "required": ["treatment"],
+                "show": [],
+                "properties": {
+                    "xNameDataSet": {
+                        "type": "string",
+                        "default": "PLSNNPaper",
+                        "choice": ["PLSNNPaper"],
+                        "title": "PLSNNPaper is the set of parameters defined in RDJ's paper"
+                    },
+                    "treatment": {
+                        "type": "string",
+                        "default": "all",
+                        "choice": ["all","TR","TS","TG","TM"],
+                        "title": "Treatments"
+                    },
+                    "trainFlag": {
+                        "type": "boolean",
+                        "default": "false",
+                        "title": "do you want to train the model?"
+                    },
+                    "printFlag": {
+                        "type": "boolean",
+                        "default": "false",
+                        "title": "do you want to print model outputs?"
+                    }
+                }
+            },
+            "outputs": ["DEGFR"]
+        }
+    ]
+}

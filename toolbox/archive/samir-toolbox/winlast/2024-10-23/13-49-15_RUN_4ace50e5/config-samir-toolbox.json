@@ -1,0 +1,77 @@
+{
+    "name": "samir-toolbox",
+    "display-name": "MUI",
+    "description": "?",
+    "authors": "Samir @ Medical University of Innsbruck",
+    "contacts": "",
+    "module_version": "0.9",
+    "general_path": "toolbox/modules/samir-toolbox",
+    "default_functionality": "predict",
+    "functionalities": [
+        {
+            "name": "predict",
+            "functionality_type": "predictor",
+            "description": "produces prediction output on control through delta treshold and svg plots ...",
+            "functionality_version": "0.9",
+            "output_type": "regression",
+            "preprocessor_path": "",
+            "module_path": "toolbox/modules/samir-toolbox/source_files/main.py",
+            "postprocessor_path": "toolbox/modules/samir-toolbox/samir_post.py",
+            "preprocessing": "",
+            "command_line": "python {module_path} --path {json_params_path}",
+            "postprocessing": "python {postprocessor_path}",
+            "standard_preprocessing_path": "toolbox/modules/samir-toolbox/data/input_data.csv",
+            "standard_input_path": "toolbox/modules/samir-toolbox/data/predict/input_data.csv",
+            "standard_output_path": "toolbox/modules/samir-toolbox/outputs/TC_pred.csv",
+            "standard_postprocessing_path": "toolbox/modules/samir-toolbox/post/post.csv",
+            "standard_training_data_path": "toolbox/modules/samir-toolbox/data/data_to_train/new_train_data.csv",
+            "json_params_path": "toolbox/modules/samir-toolbox/source_files/config.json",
+            "json_params_template": {
+                "predict_data": "toolbox/modules/samir-toolbox/data/predict/input_data.csv",
+                "train_data": "toolbox/modules/samir-toolbox/data/data_to_train/new_train_data.csv",
+                "trained_data_directory": "toolbox/modules/samir-toolbox/data/train/",
+                "trained_models_directory": "toolbox/modules/samir-toolbox/trained_models/",
+                "output_directory": "toolbox/modules/samir-toolbox/outputs/TC_pred.csv",
+                "TC_threshold": "-0.1",
+                "directory_rasi_model": "toolbox/modules/samir-toolbox/trained_models/model_rasi.pkl",
+                "directory_sglt2i_model": "toolbox/modules/samir-toolbox/trained_models/model_sglt2i.pkl",
+                "directory_mcra_model": "toolbox/modules/samir-toolbox/trained_models/model_mcra.pkl",
+                "Plot": {
+                    "get_plot": "False",
+                    "output_directory_shap_rasi": "toolbox/modules/samir-toolbox/outputs/shap_rasi/",
+                    "output_directory_shap_sglt2i": "toolbox/modules/samir-toolbox/outputs/shap_sglt2i/",
+                    "output_directory_shap_mcra": "toolbox/modules/samir-toolbox/outputs/shap_mcra/",
+                    "plot_all_features": "False"
+                }
+            },
+            "parameters": {
+                "required": [],
+                "show": [
+                    "TC_threshold",
+                    "plot",
+                    "plot_all"
+                ],
+                "properties": {
+                    "TC_threshold": {
+                        "type": "number",
+                        "default": -0.1,
+                        "title": "Target control treshold"
+                    },
+                    "plot": {
+                        "type": "boolean",
+                        "default": "False",
+                        "title": "Plot Shap Explainer (time consuming)"
+                    },
+                    "plot_all": {
+                        "type": "boolean",
+                        "default": "False",
+                        "title": "Plot all the variables"
+                    }
+                }
+            },
+            "outputs": [
+                "TC, DEGFR, EGFR"
+            ]
+        }
+    ]
+}

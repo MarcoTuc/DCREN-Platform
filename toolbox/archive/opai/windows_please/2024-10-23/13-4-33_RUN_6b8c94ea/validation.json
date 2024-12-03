@@ -1,0 +1,11 @@
+[
+    {
+        "variable": "TC",
+        "type": "categorical",
+        "validation": {
+            "accuracy": 0.3761467889908257,
+            "sensitivity": 0.4625,
+            "specificity": 0.25333333333333335
+        }
+    }
+]

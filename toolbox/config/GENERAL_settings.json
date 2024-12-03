@@ -1,0 +1,12 @@
+{
+    "toolbox-version": "0.6",
+    "authors": "Marco Tuccio & Claudio Silvestri @ European Center for Living Technology",
+    
+    "modules": {
+        "list": ["opai","PLSNNToolbox","DEB","samir-toolbox","MUW"]
+        },
+
+    "datasets": ["dcren-datasocket"],
+    
+    "experiments_path": "toolbox/experiments"
+}

@@ -1,0 +1,69 @@
+{
+    "name": "TEMPLATE",
+    "display-name": "Name to be displayed in the webapp",
+    "description": "This template serves as a guide for configuring a new method",
+    "authors": "Marco & Claudio @ ECLT",
+    "contacts": "",
+    "module_version": "Put here the version of your module",
+    "module_path": "path should be: <toolbox/modules/[NAMEOFTOOLBOX]>", 
+    "trained_version": "When training capabilities will be implemented in the toolbox put here the name of its version here",
+    "default_functionality": "name_of_def_func",
+    "functionalities": [
+        {
+            "name": "Functionality 1",
+            "functionality_type": "type of functionality can be: predictor, trainer, validator, summarizer",
+            "description": "Description of functionality 1",
+            "functionality_version": "",
+            "output_type": "",
+            "preprocessor_path": "path of the preprocessor in the installation folder",
+            "module_path": "path of the module inside the installation folder",
+            "postprocessor_path": "path of the postprocessor in the installation folder",
+            "preprocessing": "preprocessing command line syntax",
+            "command_line": "CMDLINE COMMAND and parameters for the command line like {parameter1}{parameter2} and so on",
+            "postprocessing": "postprocessing command line syntax",
+            "standard_preprocessing_path": "",
+            "standard_input_path": "",
+            "standard_output_path": "",
+            "standard_postprocessing_path": "",
+            "json_params_path"  : "path where the method expects to find its json parameters input",
+            "json_params_template": {"A JSON DICTIONARY":"MADE BY THE AUTHOR OF THE METHOD AS WANTED"},
+            "parameters": {
+                "required": ["parameters that don't have a default and need to be specified each time"],
+                "properties": {
+                    "parameter1": {
+                        "type": "type of parameter",
+                        "default": "default",
+                        "title": "Whatever is a good title for it",
+                        "choice": ["list of choices"]
+                    },
+                    "string_parameter": {
+                        "type": "string",
+                        "title": "Strings are pieces of text that can have the following properties attached",
+                        "minLength": 0,
+                        "maxLength": 10,
+                        "pattern": "Restrict the expression to a particular regular expression",
+                        "regex": "Regular expression through regex, put a regex pattern like: [A-Za-z0-9_-]+",
+                        "format": "can be: date-time, time, date, duration, email, idn-email"
+                    },
+                    "numeric_parameter": {
+                        "type": "can be: integer(means integer), number(means floating)",
+                        "title": "Only numbers here",
+                        "multipleOf": "put a number which the numeric input has to be a multiple of, can be integer or floating",
+                        "minimum": "<=",
+                        "exclusiveMinimum": "<",
+                        "maximum": ">=",
+                        "exclusiveMaximum": ">"
+                    },
+                    "boolean_parameter": {
+                        "type": "boolean",
+                        "title": "only booleans here and can't use like 0 for false and 1 for true, has to be <true> or <false> and lowercase, make sure to convert to this format from your language"
+                    },
+                    "null_parameter": {
+                        "type": "null",
+                        "title": "only accepts <null> as input, so convert the null type from your language to be <null> here"
+                    }
+                }
+            }
+        }
+    ]
+}

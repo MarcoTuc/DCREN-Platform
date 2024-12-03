@@ -1,0 +1,8 @@
+AVVERTIMENTO: opzione '--model' sconosciuta
+
+AVVERTIMENTO: opzione '--input' sconosciuta
+
+AVVERTIMENTO: opzione '--output' sconosciuta
+
+Errore irreversibile: si deve specificare '--save', '--no-save' o '--vanilla'
+

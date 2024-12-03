@@ -1,0 +1,18 @@
+{
+    "predict_data": "toolbox/modules/samir-toolbox/data/predict/input_data.csv",
+    "train_data": "toolbox/modules/samir-toolbox/data/data_to_train/new_train_data.csv",
+    "trained_data_directory": "toolbox/modules/samir-toolbox/data/train/",
+    "trained_models_directory": "toolbox/modules/samir-toolbox/trained_models/",
+    "output_directory": "toolbox/modules/samir-toolbox/outputs/TC_pred.csv",
+    "TC_threshold": "-0.1",
+    "directory_rasi_model": "toolbox/modules/samir-toolbox/trained_models/model_rasi.pkl",
+    "directory_sglt2i_model": "toolbox/modules/samir-toolbox/trained_models/model_sglt2i.pkl",
+    "directory_mcra_model": "toolbox/modules/samir-toolbox/trained_models/model_mcra.pkl",
+    "Plot": {
+        "get_plot": "False",
+        "output_directory_shap_rasi": "toolbox/modules/samir-toolbox/outputs/shap_rasi/",
+        "output_directory_shap_sglt2i": "toolbox/modules/samir-toolbox/outputs/shap_sglt2i/",
+        "output_directory_shap_mcra": "toolbox/modules/samir-toolbox/outputs/shap_mcra/",
+        "plot_all_features": "False"
+    }
+}

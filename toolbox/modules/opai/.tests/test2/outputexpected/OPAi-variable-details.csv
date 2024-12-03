@@ -1,0 +1,4 @@
+TSVARLIST,mean,median,min,max,NULL,countLB,countUB
+DBP,234.67,201,2,501,0,1,1
+BG,216.67,101,50,499,0,0,0
+Hba1c_spot,253,253,5,501,1,0,0

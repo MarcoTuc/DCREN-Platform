@@ -1,0 +1,3 @@
+TSVARLIST,mean,median,min,max,NULL,countLB,countUB
+var1,4.67,5,2,7,0,0,0
+var2,1,1,1,1,0,0,0

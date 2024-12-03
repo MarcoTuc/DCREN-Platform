@@ -1,0 +1,15 @@
+Starting OPAi.App
+Checking input directory exists...DONE
+Reading input data...DONE
+Preprocessing input data...DONE
+  Get variables to include...DONE
+  Remove variables not to be included and order columns...DONE
+  Apply upper and lower bounds...DONE
+  Apply log transformations...DONE
+Running prediction...DONE
+  Getting prediction states and cases to do...DONE
+  Matching prediction states to virtual states...DONE
+  Doing predictions...DONE
+  Finalising predictions...DONE
+Outputting results...DONE
+Finished OPAi.App
