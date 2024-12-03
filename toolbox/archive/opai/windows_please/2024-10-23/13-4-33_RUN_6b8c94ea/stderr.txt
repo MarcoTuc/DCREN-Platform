@@ -1,8 +1,0 @@
-WARNING: unknown option '-m'
-
-WARNING: unknown option '-i'
-
-WARNING: unknown option '-o'
-
-Fatal error: you must specify '--save', '--no-save' or '--vanilla'
-

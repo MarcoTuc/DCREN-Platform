@@ -1,9 +1,0 @@
-{
-    "database": "dcren-datasocket-future.csv",
-    "functionality": "predict",
-    "parameters": {
-        "TC_threshold": "-0.1",
-        "plot": "False",
-        "plot_all": "False"
-    }
-}
