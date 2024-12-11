@@ -1,0 +1,13 @@
+,DATA,TOOL,NAME,VARIABLE,METRIC,VALUE
+0,dcren-datasocket-future.csv,MUW,PROVALID-TEST,DEGFR,MSE,157.51814891582498
+1,dcren-datasocket-future.csv,MUW,PROVALID-TEST,TC,accuracy,0.6201834862385321
+2,dcren-datasocket-future.csv,MUW,PROVALID-TEST,TC,sensitivity,0.9484375
+3,dcren-datasocket-future.csv,MUW,PROVALID-TEST,TC,specificity,0.15333333333333332
+4,dcren-datasocket-future.csv,opai,PROVALID-TEST,TC,accuracy,0.3761467889908257
+5,dcren-datasocket-future.csv,opai,PROVALID-TEST,TC,sensitivity,0.4625
+6,dcren-datasocket-future.csv,opai,PROVALID-TEST,TC,specificity,0.25333333333333335
+7,dcren-datasocket-future.csv,samir-toolbox,PROVALID-TEST,TC,accuracy,0.6581532416502947
+8,dcren-datasocket-future.csv,samir-toolbox,PROVALID-TEST,TC,sensitivity,0.7248322147651006
+9,dcren-datasocket-future.csv,samir-toolbox,PROVALID-TEST,TC,specificity,0.5639810426540285
+10,dcren-datasocket-future.csv,samir-toolbox,PROVALID-TEST,DEGFR,MSE,165.56546445999274
+11,dcren-datasocket-future.csv,samir-toolbox,PROVALID-TEST,EGFR,MSE,165.56546445999274

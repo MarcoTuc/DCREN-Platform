@@ -1,0 +1,11 @@
+pandas==2.1.1
+numpy==1.26.0
+matplotlib==3.7.1
+PyYAML
+scipy==1.11.3
+scikit-learn==1.3.1
+shap==0.41.0
+xgboost==1.6.0
+networkx
+hyperopt
+pycm
