@@ -60,7 +60,7 @@ process_data <- function(d, m) {
                 # personal history yes no na
                 "PHDRB", "PHRDB", "PHCADB", "PHPADB", "PHCVDB", 
                 # family history yes no na
-                "FHHT", "FHCVD", "FHM", 
+                "FHHT", "FHCVD", "FHM",
                 "APASA", "APTPD", "VDCCF", 
                 # others relevant for modeling
                 "TADI", "SDMAV", "SHTAV"))
@@ -73,37 +73,12 @@ process_data <- function(d, m) {
     d[, m$vars]
 }
 
-#' Imputate missing data using saved model.
+#' Impute missing data using saved model.
 #' 
 #' @param d 
 #' Output of `process_data`.
 impute_data <- function(d, m_imp) {
     mice::complete(mice::mice.mids(m_imp, newdata = d, printFlag = FALSE), 1)
-}
-
-#' @title Applies extracted scale to data.frame
-#' 
-#' @param d
-#' Data.frame
-#' @param scaler
-#' List of scalers
-#' 
-#' @details 
-#' All columns not found in scaler are left as they are.
-#' 
-#' @return 
-#' Scaled data.frame
-apply_scale <- function(d, scaler) {
-    d_scaled = d
-    
-    for (i in seq_along(scaler)) {
-        s = scaler[[i]]
-        if (is.na(s[[1]])) next
-        v = names(scaler)[i]
-        d_scaled[[v]] = apply_scale_variable(d[[v]], s)
-    }
-    
-    d_scaled
 }
 
 #' Predict from saved model.
@@ -133,6 +108,9 @@ predict_data <- function(d_in, m_pred) {
         d_pred$GLP1A = med_vals[[v]][2]
         d_pred$MCRA = med_vals[[v]][3]
         
+        # this is exactly the same result as running predict using scaled
+        # data
+        # here we use unscaled data and unscaled coefficients
         mat_pred = model.matrix(f_prep, d_pred)
         linpred = 0
         for (col in 1:ncol(mat_pred)) {
@@ -140,7 +118,14 @@ predict_data <- function(d_in, m_pred) {
             linpred = linpred + mat_pred[, col] * m_pred$coefs[vname, "coefficient_clean_unscaled"]
         }
         
+        # for delta egfr need unscaled egfr!
         res[[v]] = rbind(
+            # data.frame(
+            #     test_id = d_in$AGGID, 
+            #     therapy = names(med_vals)[v],
+            #     predicted_variable = "EGFR",
+            #     predicted_value = linpred
+            # ),
             data.frame(
                 test_id = d_in$AGGID, 
                 therapy = names(med_vals)[v],

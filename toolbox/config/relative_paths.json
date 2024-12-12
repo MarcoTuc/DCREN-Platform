@@ -1,4 +1,4 @@
 {
-    "python": "/home/marco/Desktop/Coding/DCREN/platform/DCREN-Platform/env/bin/python",
-    "Rscript": "/usr/bin/Rscript"
+    "python": "python310/python.exe",
+    "Rscript": "R/R-4.4.1/bin/Rscript.exe"
 }

@@ -130,8 +130,8 @@ class Validator():
             confmatrix = confusion_matrix(y_vals, x_vals)
             true_cd, false_ucd, false_cd, true_ucd = confmatrix.ravel()
             accuracy = (true_cd + true_ucd) / (true_cd + true_ucd + false_cd + false_ucd)
-            specificity = (true_cd) / (true_cd + false_ucd)
-            sensitivity = (true_ucd) / (true_ucd + false_cd)
+            sensitivity = (true_cd) / (true_cd + false_ucd)
+            specificity = (true_ucd) / (true_ucd + false_cd)
             return accuracy, sensitivity, specificity
 
     def default_validation(self, experiment_path):

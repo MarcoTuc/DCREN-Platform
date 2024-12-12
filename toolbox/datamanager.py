@@ -1,6 +1,6 @@
 import os 
 import json
-# import yaml
+import os
 
 import pandas as pd 
 import numpy as np 
@@ -145,6 +145,7 @@ class DataManager(DataBase):
     
     def write_to_path(self, path):
         if self.extension == 'csv':
+            os.makedirs(os.path.dirname(path), exist_ok=True)
             self.data.to_csv(path, index=False)
     
     ##############################################

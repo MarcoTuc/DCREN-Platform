@@ -1,8 +1,12 @@
-python
-R
-
-__pycache__
+*.db
+*.py[cod]
 .web
-env
+R
+__pycache__
+__pycache__/
+assets/external/
 data
+env
+python
+python310
 toolbox/experiments
