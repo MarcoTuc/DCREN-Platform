@@ -95,7 +95,7 @@ class Oracle:
         tcmap = {
             "controlled": 0,
             "uncontrolled": 1,
-            "inbetween": 1,
+            "inbetween": 0,
             "n/o": None,
             None: None
         }
